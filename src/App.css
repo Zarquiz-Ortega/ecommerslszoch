@@ -1,0 +1,39 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body.dark {
+  background-color: #222;
+  color: white;
+}
+
+img {
+  display: inline-block;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: dodgerblue;
+}
+
+input,
+button {
+  display: inline-block;
+  font-family: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+button {
+  padding: 5px 15px;
+}
