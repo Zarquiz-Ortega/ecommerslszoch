@@ -10,3 +10,15 @@
     align-items: center;
     justify-content: center;
 }
+
+.splide__arrow{
+    background-color: orange;
+}
+
+.splide__pagination__page{
+    background-color: orange;
+}
+
+.splide__pagination__page.is-active{
+    background: black;
+}

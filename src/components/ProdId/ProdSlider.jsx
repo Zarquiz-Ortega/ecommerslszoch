@@ -10,7 +10,7 @@ const ProdSlider = ({ product }) => {
             options={{
                 rewind: true,
             }}
-            aria-label="My Favorite Images"
+            aria-label="Product Images"
         >
             {
                 product?.images.map(img => (

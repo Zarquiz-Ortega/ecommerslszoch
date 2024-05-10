@@ -41,13 +41,13 @@ const ProdInfo = ({ product }) => {
                 </p>
                 <div className='prodinfo__counter' >
                     <p>Quantity</p>
-                    <button onClick={handleLess} className='prodinfo__btnless' >-1</button>
+                    <button onClick={handleLess} className='prodinfo__btn less' >-1</button>
                     <span>{counter}</span>
-                    <button onClick={handlePlus} className='prodinfo__btnplus'>+1</button>
+                    <button onClick={handlePlus} className='prodinfo__btn plus'>+1</button>
                 </div>
             </div>
 
-            <button className='prodinfo__btnbuy' onClick={handleBuy} >add to cart</button>
+            <button className='prodinfo__btn buy' onClick={handleBuy} >Add to cart 🛒</button>
         </article>
     )
 }

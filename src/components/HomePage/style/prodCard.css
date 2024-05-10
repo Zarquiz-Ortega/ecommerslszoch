@@ -1,11 +1,12 @@
 .prodcard{
-    width: 250px;
-    border: 2px solid rgba(128, 128, 128, 0.356);
+    width: 300px;
+    border: 2px solid gainsboro;
     border-radius: 10px ;
     padding: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .prodcard__img{
@@ -19,13 +20,37 @@
 .prodcard__item{
     display: flex;
     flex-direction: column;
+    font-weight: bold;
 }
+.prodcard__item span:first-child{
+    color: rgb(180, 178, 178);
+}
+
 .prodcard__item span:last-child{
     padding-left: 25px;
 }
 
 .prodcard__buttons{
     display: flex;
-    justify-content: space-evenly;
-    margin-top: 15px;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.prodcard__btn {
+    border: 2px solid orange;
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+.prodcard__btn:hover{
+    background-color: white;
+    color: orange;
+    transform: scale(1.1);
+    transition: transform .5s;
+}
+
+.add{
+    font-size: 1.2rem;
 }

@@ -8,6 +8,7 @@ import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
 import ProtectedRoutes from './pages/ProtectedRoutes'
 import NavBar from './components/share/NavBar'
+import Footer from './components/share/Footer'
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
           <Route path='/purchases' element={<Purchases />} />
         </Route>
       </Routes>
+      <Footer/>
     </div>
   )
 }

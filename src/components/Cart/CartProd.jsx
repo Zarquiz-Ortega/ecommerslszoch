@@ -25,21 +25,27 @@ const CartProd = ({ prod }) => {
         dispatch(deleteCartThunk('/cart', prod.id))
     }
 
-    console.log(prod)
+    //console.log(prod)
 
     return (
         <article className='cartprod' >
-            <h3 className='cartprod__title' >{prod.product?.title}</h3>
             <figure className='cartprod__img' >
                 <img src={prod.product?.images[0].url} alt="product img" />
             </figure>
-            <div className='cartprod__container' >
-                <button onClick={handleLess} >-1</button>
-                <span> {prod.quantity} </span>
-                <button onClick={handlePlus} >+1</button>
+            <div className='cartprod__data'>
+                <div className='cartprod__data-item'>
+                    <h3 className='cartprod__title' >{prod.product?.title}</h3>
+                    <div className='cartprod__container' >
+                        <button className='cartprod__btn' onClick={handleLess} >-1</button>
+                        <span> {prod.quantity} </span>
+                        <button className='cartprod__btn' onClick={handlePlus} >+1</button>
+                    </div>
+                </div>
+                <div className='cartprod__data-item'>
+                    <button className='cartprod__btn delete' onClick={handleDelete} >Delete</button>
+                    <span className='cartprod__price' ><b>Total: </b> ${prod.product?.price * prod.quantity}.00</span>
+                </div>
             </div>
-            <button onClick={handleDelete} >Delete</button>
-            <span className='cartprod__price' ><b>Total: $</b> {prod.product?.price * prod.quantity}</span>
         </article>
     )
 }

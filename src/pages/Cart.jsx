@@ -30,14 +30,14 @@ const Cart = () => {
                 }
             </div>
             <div className='cart__totals' >
-                <p>Total Products: {cart?.reduce((ca, pr) => {
+                <h3>Total Products: {cart?.reduce((ca, pr) => {
                     return ca + pr.quantity
-                }, 0)}</p>
-                <p>Total Prices: ${cart?.reduce((ca, pr) => {
+                }, 0)}</h3>
+                <h3>Total Prices: ${cart?.reduce((ca, pr) => {
                     return ca + pr.quantity * pr.product?.price
                 },
-                    0)}</p>
-                <button onClick={handleBuy} >buy</button>
+                    0)}.00</h3>
+                <button  className='cart__btn' onClick={handleBuy} >buy</button>
             </div>
         </>
 

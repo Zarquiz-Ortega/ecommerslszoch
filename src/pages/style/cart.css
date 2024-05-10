@@ -4,6 +4,8 @@
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 20px;
+    max-width: 1024px;
+    margin: 0 auto;
 }
 
 .cart__totals{
@@ -12,4 +14,20 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.cart__btn{
+    width: 250px;
+    background-color: orange;
+    color: white;
+    border: 2px solid orange;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.cart__btn:hover{
+    color: orange;
+    background-color: white;
+    transform: scale(1.1);
+    transition: transform .5s;
 }

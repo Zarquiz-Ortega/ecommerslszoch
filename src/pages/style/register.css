@@ -1,0 +1,61 @@
+.register {
+    height: calc(100vh - 210px);
+    max-width: 1024px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register__title{
+    color: orange;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.register__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border: 2px solid gainsboro;
+    padding: 25px ;
+    border-radius: 10px;
+    gap: 10px ;
+}
+
+.register__form-item{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.register__form-item input{
+    border: none;
+    border-bottom:2px solid gray;
+}
+
+.register__form-item label{
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+.register__form-item input:hover{
+    border-bottom:2px solid orange;
+}
+
+.register__btn{
+    background-color: orange;
+    border: 2px solid orange;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.register__btn:hover{
+    color: orange;
+    background-color: white;
+    transform: scale(1.1);
+    transition: transform .5s;
+}

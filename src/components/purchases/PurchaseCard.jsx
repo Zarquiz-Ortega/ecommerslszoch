@@ -11,9 +11,11 @@ const PurchaseCard = ({ prod }) => {
             <figure className='purchasecard__img' >
                 <img src={prod.product?.images[0].url} alt="product img" />
             </figure>
-            <p className='purchasecard__date' >{prod.updatedAt.slice(0,10)}</p>
-            <span className='purchasecard__quantity' >{prod.quantity}</span>
-            <span className='purchasecard__price' >Total proce: ${prod.product?.price * prod.quantity}</span>
+            <div className='purchasecard__data'>
+                <p className='purchasecard__date'><b>Date</b> <br />{prod.updatedAt.slice(0, 10)}</p>
+                <span className='purchasecard__quantity' ><b>Quantity</b><br /> {prod.quantity}</span>
+            </div>
+            <span className='purchasecard__price' ><b>Total proce:</b> ${prod.product?.price * prod.quantity}</span>
         </article>
     )
 }

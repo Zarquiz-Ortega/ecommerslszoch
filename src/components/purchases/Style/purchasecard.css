@@ -1,17 +1,43 @@
 .purchasecard{
     width: 300px;
     padding: 20px;
-    border: 1px solid;
+    border: 2px solid gainsboro;
     border-radius: 20px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 2fr 1fr;
     place-items: center;
+    gap: 15px;
+    box-shadow: 0 15px 22px rgba(128, 128, 128, 0.164);
 }
+
+.purchasecard:hover{
+    transform:  scale(1.05);
+    transition: transform 0.5s;
+}
+
 .purchasecard__title{
     grid-column: span 3;
+    text-align: center;
 }
 
 .purchasecard__price{
     grid-column: span 3;
+}
+
+.purchasecard__data{
+    grid-column: span 2;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.purchasecard__data{
+    text-align: center;
+}
+
+.purchasecard__quantity{
+    text-align: center;
 }

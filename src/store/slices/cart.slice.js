@@ -11,14 +11,16 @@ const cart = createSlice({
     initialState: null,
     reducers: {
         setCart: (_value, action) => action.payload,
-        addCart: (value, action) => { value.push(action.payload) },
+        addCart: (value, action) => value.push(action.payload),
         delCart: (value, action) => value.filter(
             prod => prod.id !== action.payload
         ),
+        updateCart: (value, action) => value.map(
+            prod => prod.id === action.payload.id ? action.payload.data : prod),
     }
 })
 
-export const { setCart, addCart, delCart } = cart.actions
+export const { setCart, addCart, delCart, updateCart } = cart.actions
 
 export default cart.reducer
 
@@ -51,6 +53,6 @@ export const deleteCartThunk = (path, id) => (dispatch) => {
 export const putCartThunk = (path, id, data) => (dispatch) => {
     const url = `${urlBase}${path}/${id}`
     axios.put(url, data, getToken())
-        .then(res => console.log(res.data))
+        .then(res => dispatch(updateCart(id, res.data)))
         .catch(err => console.log(err))
 }

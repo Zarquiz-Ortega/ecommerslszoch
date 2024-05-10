@@ -7,7 +7,7 @@ import ProdSlider from '../components/ProdId/ProdSlider'
 
 const ProdId = () => {
 
-    const [product, getProduct] = useFetch()
+    const [product, getProduct, isLoading] = useFetch()
 
     const params = useParams()
 
@@ -18,8 +18,17 @@ const ProdId = () => {
 
     return (
         <section className='prodid' >
-            <ProdSlider product={product} />
-            <ProdInfo product={product} />
+            {
+                isLoading ?
+                    <div className='overlay'>
+                        <div class='spinner'></div>
+                    </div>
+                    :
+                    <>
+                        <ProdSlider product={product} />
+                        <ProdInfo product={product} />
+                    </>
+            }
         </section>
     )
 }

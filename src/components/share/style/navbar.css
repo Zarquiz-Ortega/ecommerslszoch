@@ -1,14 +1,28 @@
 .navbar {
     display: flex;
-    padding: 0 20px;
+    padding: 10px 20px;
     align-items: center;
     justify-content: space-between;
-    background-color: orange;
     flex-wrap: wrap;
+    border-bottom: 2px solid gainsboro;
+}
+
+.navbar__title a{
+    color: orange;
+    text-decoration: none;
 }
 
 .navbar__lis {
     display: flex;
-    gap: 20px;
-    
+}
+
+.navbar__item{
+    height: 100%;
+}
+
+.navbar__item a{
+    color: orange;
+    text-decoration: none;
+    border-left: 2px solid gainsboro;
+    padding: 0 15px;
 }

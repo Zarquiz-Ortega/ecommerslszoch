@@ -36,8 +36,8 @@ const ProdCard = ({ prod }) => {
                 </li>
             </ul>
             <div className='prodcard__buttons' >
-                <button type='button' onClick={handleView}>view details</button>
-                <button type='button' onClick={handleBuy}>add to cart</button>
+                <button className='prodcard__btn' type='button' onClick={handleView}>View details</button>
+                <button className='prodcard__btn add' type='button' onClick={handleBuy}>+🛒</button>
             </div>
         </article>
     )
