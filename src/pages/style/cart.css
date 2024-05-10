@@ -1,3 +1,7 @@
+.container {
+    height: 100vh;
+}
+
 .cart{
     padding: 10px;
     display: flex;

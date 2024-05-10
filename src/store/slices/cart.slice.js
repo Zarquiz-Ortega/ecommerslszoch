@@ -8,19 +8,23 @@ const urlBase = 'https://e-commerce-api-v2.academlo.tech/api/v1'
 const cart = createSlice({
 
     name: 'cart',
-    initialState: null,
+    initialState: [],
     reducers: {
         setCart: (_value, action) => action.payload,
-        addCart: (value, action) => value.push(action.payload),
+        addCart: (value, action) => {value.push(action.payload)},
         delCart: (value, action) => value.filter(
             prod => prod.id !== action.payload
         ),
-        updateCart: (value, action) => value.map(
-            prod => prod.id === action.payload.id ? action.payload.data : prod),
+        putCart: (value, action) => value.map(prod => {
+            const { quantity, id } = action.payload
+            return prod.id === id ?
+                {...prod, quantity: quantity} :
+                prod
+        }),
     }
 })
 
-export const { setCart, addCart, delCart, updateCart } = cart.actions
+export const { setCart, addCart, delCart, putCart } = cart.actions
 
 export default cart.reducer
 
@@ -50,9 +54,9 @@ export const deleteCartThunk = (path, id) => (dispatch) => {
 }
 
 
-export const putCartThunk = (path, id, data) => (dispatch) => {
+export const putCartThunk = (path, data, id) => (dispatch) => {
     const url = `${urlBase}${path}/${id}`
     axios.put(url, data, getToken())
-        .then(res => dispatch(updateCart(id, res.data)))
+        .then(res => dispatch(putCart(res.data)))
         .catch(err => console.log(err))
 }

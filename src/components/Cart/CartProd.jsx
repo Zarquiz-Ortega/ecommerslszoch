@@ -5,25 +5,31 @@ import { deleteCartThunk, putCartThunk } from '../../store/slices/cart.slice'
 
 const CartProd = ({ prod }) => {
 
-    const [counter, setCounter] = useState(prod.quantity)
-
     const dispatch = useDispatch()
-
-    const handlePlus = () => {
-        setCounter(counter + 1)
-        dispatch(putCartThunk('/cart', prod.id, { quantity: counter }))
-    }
-
-    const handleLess = () => {
-        if (counter > 1) {
-            setCounter(counter - 1)
-            dispatch(putCartThunk('/cart', prod.id, { quantity: counter }))
-        }
-    }
 
     const handleDelete = () => {
         dispatch(deleteCartThunk('/cart', prod.id))
     }
+
+    const handleLess = () => {
+        if (prod.quantity > 1) {
+            dispatch(putCartThunk(
+                '/cart',
+                { quantity: prod.quantity - 1 },
+                prod.id
+            ))
+        }
+    }
+
+    const handlePlus = () => {
+        dispatch(putCartThunk(
+            '/cart',
+            { quantity: prod.quantity + 1 },
+            prod.id
+        ))
+    }
+
+
 
     //console.log(prod)
 

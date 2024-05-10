@@ -4,6 +4,7 @@ import useFetch from '../hooks/useFetch'
 import ProdInfo from '../components/ProdId/ProdInfo'
 import './style/prodid.css'
 import ProdSlider from '../components/ProdId/ProdSlider'
+import ProdSimilar from '../components/ProdId/ProdSimilar'
 
 const ProdId = () => {
 
@@ -25,8 +26,11 @@ const ProdId = () => {
                     </div>
                     :
                     <>
-                        <ProdSlider product={product} />
-                        <ProdInfo product={product} />
+                        <div className='prodid__data'>
+                            <ProdSlider product={product} />
+                            <ProdInfo product={product} />
+                        </div>
+                        <ProdSimilar product={product} />
                     </>
             }
         </section>

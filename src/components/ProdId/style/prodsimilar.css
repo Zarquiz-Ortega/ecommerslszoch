@@ -1,0 +1,10 @@
+.prodsimilar__title{
+    text-align: center;
+    margin: 15px 0;
+}
+
+.prodsimilar__data{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}

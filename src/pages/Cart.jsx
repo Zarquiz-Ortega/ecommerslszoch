@@ -21,7 +21,7 @@ const Cart = () => {
     }
 
     return (
-        <>
+        <div className='container'>
             <div className='cart' >
                 {
                     cart?.map(prod => (
@@ -39,7 +39,7 @@ const Cart = () => {
                     0)}.00</h3>
                 <button  className='cart__btn' onClick={handleBuy} >buy</button>
             </div>
-        </>
+        </div>
 
     )
 }
